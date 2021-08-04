@@ -12,10 +12,10 @@ bool cycleDetectionBFS(int i, vector<int> vis, vector<int> adj[]){
         int par = q.front().second;
 
         for(auto it : adj[node]){
-            if(!vis[it]){
-                vis[it] = true;
-                q.push({it,node});
-            }else if(par!=it){
+            if(!vis[*it]){
+                vis[*it] = true;
+                q.push({*it,node});
+            }else if(par!=*it){
                 return true;
             }
         }
