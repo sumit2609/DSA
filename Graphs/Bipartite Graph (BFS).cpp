@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-bool checkBipatite(int node, vector<int> &col, vector<int> adj[]){
+bool checkBipartite(int node, vector<int> &col, vector<int> adj[]){
     queue<int> q;
     q.push(node);
     col[node] = 1;
