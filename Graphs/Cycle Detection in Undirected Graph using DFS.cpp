@@ -6,7 +6,7 @@ bool cycleDFS(int node, vector<int> &vis, vector<int> adj[], int parent){
         if(!vis[it]){
             vis[it] = 1;
             if(cycleDFS(*it,vis,adj,node))
-                return true
+                return true;
         }else if(it!=parent){
             return true;
         }
