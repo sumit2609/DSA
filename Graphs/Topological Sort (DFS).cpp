@@ -1,10 +1,11 @@
-#include<bits/stdc++>
+#include<bits/stdc++.h>
+
 using namespace std;
 void topology(int node, int vis[], stack<int> &st, vector<int> adj[]){
     vis[node] = 1;
 
     for(auto it : adj[node]){
-        if(!vis[i]){
+        if(!vis[it]){
             topology(it,vis,st,adj);
         }
     }
@@ -15,7 +16,7 @@ void dfs(int v, vector<int> adj[]){
     int vis[v];
     stack<int> st;
 
-    for(int i = 0; i<n; i++){
+    for(int i = 0; i<v; i++){
         if(!vis[i]){
             topology(i,vis,st,adj);
         }

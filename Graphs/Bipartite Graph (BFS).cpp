@@ -10,7 +10,7 @@ bool checkBipartite(int node, vector<int> &col, vector<int> adj[]){
             if(col[it] == -1){
                 col[it] = 1-col[node];
                 q.push(it);
-            }else if(col[it] == node){
+            }else if(col[it] == col[node]){
                 return false;
             }
         }
