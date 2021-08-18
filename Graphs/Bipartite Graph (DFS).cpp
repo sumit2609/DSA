@@ -7,7 +7,7 @@ bool isBipartite(int node, vector<int> &col, vector<int> adj[]){
             col[it] = 1-col[node];
             if(!isBipartite(it,col,adj))
                 return false;
-        }else if(col[it] == node){
+        }else if(col[it] == col[node]){
             return false;
         }
     }

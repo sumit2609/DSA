@@ -26,7 +26,7 @@ bool dfs(int v, vector<int> adj[]){
     memset(vis,0,sizeof(vis));
     memset(dfsVis,0,sizeof(dfsVis));
 
-    for(int i = 0; i<n; i++){
+    for(int i = 0; i<v; i++){
         if(!vis[i]){
             if(checkCycle(i,vis,dfsVis,adj))
                 return true;
