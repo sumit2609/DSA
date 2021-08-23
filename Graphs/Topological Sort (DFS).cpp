@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 
 using namespace std;
+//cycle should not be present if we need topological sort 
 void topology(int node, int vis[], stack<int> &st, vector<int> adj[]){
     vis[node] = 1;
 
