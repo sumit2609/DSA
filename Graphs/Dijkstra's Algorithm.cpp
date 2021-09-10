@@ -1,8 +1,10 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+//Shortest path for weighted, directed graph and undirected graph,cyclic and ascyclic graph but with non negative weights.
+
 void dijkstraAlgorithm(int src, int n, vector<vector<pair<int,int>>> adj[]){
-    vector<int> dis(n+1,0);
+    vector<int> dis(n+1,INT_MAX);
 
     dis[src] = 0;
     priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>> pq;
@@ -15,10 +17,15 @@ void dijkstraAlgorithm(int src, int n, vector<vector<pair<int,int>>> adj[]){
         pq.pop();
 
         for(auto it: adj[node]){
-            if(dis[it.first]>dist+dis[node]){
-                dis[it.first] = dist+dis[node];
+            int di = it.second;
+            if(dis[it.first]>dist+di){
+                dis[it.first] = dist+di;
                 pq.push(make_pair(dis[it.first],it.first));
             }
+            // if(dis[it.first]>dist+dis[node]){
+            //     dis[it.first] = dist+dis[node];
+            //     pq.push(make_pair(dis[it.first],it.first));
+            // }
         }
     }
 
