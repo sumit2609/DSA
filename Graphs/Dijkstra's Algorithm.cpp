@@ -1,7 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-//Shortest path for weighted, directed graph and undirected graph,cyclic and ascyclic graph but with non negative weights.
 
 void dijkstraAlgorithm(int src, int n, vector<vector<pair<int,int>>> adj[]){
     vector<int> dis(n+1,INT_MAX);
