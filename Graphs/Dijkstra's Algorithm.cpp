@@ -1,10 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-//Dijkstra algorithm tells shortest path from single source node to other node in graphs not necessary to be directed or undirected
 
 void dijkstraAlgorithm(int src, int n, vector<vector<pair<int,int>>> adj[]){
-    vector<int> dis(n+1,0);
+    vector<int> dis(n+1,INT_MAX);
 
     dis[src] = 0;
     priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>> pq;
@@ -17,10 +16,15 @@ void dijkstraAlgorithm(int src, int n, vector<vector<pair<int,int>>> adj[]){
         pq.pop();
 
         for(auto it: adj[node]){
-            if(dis[it.first]>dist+dis[node]){
-                dis[it.first] = dist+dis[node];
+            int di = it.second;
+            if(dis[it.first]>dist+di){
+                dis[it.first] = dist+di;
                 pq.push(make_pair(dis[it.first],it.first));
             }
+            // if(dis[it.first]>dist+dis[node]){
+            //     dis[it.first] = dist+dis[node];
+            //     pq.push(make_pair(dis[it.first],it.first));
+            // }
         }
     }
 
