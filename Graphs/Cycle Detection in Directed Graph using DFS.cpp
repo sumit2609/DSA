@@ -1,6 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+//dfsvis array keep the track of nodes that are visited in a particular dfs call...........
+//and while going back in dfs call we have to marks dfsvis as 0.
+
 bool checkCycle(int node, int vis[], int dfsVis[], vector<int> adj[])
 {
     vis[node] = 1;
