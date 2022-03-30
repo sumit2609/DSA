@@ -1,6 +1,11 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+//in kahn's algo for cycle detection we calculate the indgree of all the nodes and the nodes which have indegree 0 we put 
+//then inside the queue, now we take a count variable , we increment the count variable for every node having indegree 0,
+//at last is count variable is equal to the number of node then cycle is not present in the graph, if cycle is present count
+//can never be equal to the number of nodes as the queue will become empty earlier
+
 bool isCyclic(int n, vector<vector<int>> adj[]){
     queue<int> q;
     vector<int> indegree(n,0);
